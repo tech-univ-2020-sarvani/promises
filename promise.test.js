@@ -5,9 +5,15 @@ describe('The promise', () => {
         const result = promisify()
         expect(typeof result).toBe('object');
     });
-    it('should check whether promise returns FULFILLED!', async () => {
-        const result = await promisify();
-        expect(result).toBeUndefined();
+    it('should check whether promise returns FULFILLED!', (done) => {
+        const result = promisify();
+        // expect(true).toBe(true);
+        result.then(() => {
+            console.log('vghuijkjnlk');
+            expect(true).toBe(true);
+            done();
+        }).catch(console.log);
+        // expect(result).resolves.toBe('FULFILLED!');
     });
     // it('should call console.log', () => {
     //     console.log = jest.fn();
